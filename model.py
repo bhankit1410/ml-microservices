@@ -12,4 +12,8 @@ def load_file():
         return json.load(f)
 
 
+def save_file():
+    with open("sample.json", "w") as f:
+        return json.dump(db, f)
+
 db = load_file()
