@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Delete card</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Delete card{% endblock %}
+
+{% block content %}
 <h1>Remove card</h1>
 
 Question: {{ card.question}} <br>
 Answer: {{ card.answer}}
 
-<h3>Are you sure</h3>
+<h1>!!!Are you sure??!!!</h1>
 <form method="post">
     <button type="submit">HELL YEAH</button>
     <a href="{{url_for('welcome')}}">NOPE</a>
 
 </form>
 
-
-</body>
-</html>
+{% endblock %}

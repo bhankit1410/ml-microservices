@@ -47,10 +47,12 @@ def add_card():
 
 @app.route('/delete_card/<int:index>', methods=['GET', 'POST'])
 def delete_card(index):
-    if request.method == 'GET':
-
-        return render_template('delete_card.html', card=db[index])
-    else:
-        del db[index]
-        save_file()
-        return redirect(url_for('welcome'))
+    try:
+        if request.method == 'GET':
+            return render_template('delete_card.html', card=db[index])
+        else:
+            del db[index]
+            save_file()
+            return redirect(url_for('welcome'))
+    except IndexError:
+        abort(404)

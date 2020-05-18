@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flash card</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Flash card number {{ index}}{% endblock %}
+
+{% block content %}
 <h1>Flash cards</h1>
 Question: {{ card.question}} <br>
 Answer: {{card.answer}}
@@ -25,11 +23,13 @@ Answer: {{card.answer}}
     </button>
     {% else %}
     <button>
+        <a href="{{ url_for('card_view', index=index -1) }}"> prev Card</a>
+    </button>
+    <button>
         <a href="{{ url_for('card_view', index=0) }}"> Start over</a>
     </button>
     {% endif %}
 
     <a href="{{ url_for('delete_card', index=index)}}">Delete this card </a>
 </p>
-</body>
-</html>
+{% endblock %}

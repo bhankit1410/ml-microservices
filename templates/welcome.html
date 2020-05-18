@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
 <h1>Welcoming you to the world of micro-services.</h1>
 <p>
     Just a paragraph saying smart stuff
     <em>getting started with Flask</em>
     on <a href="https://github.com/bhankit1410/ml-microservices">Github</a>
 </p>
-<h2>
-    Flash cards
+<h2>Flash cards </h2>
     <ul>
         {% for card in cards %}
         <li>
@@ -20,10 +17,8 @@
         </li>
         {% endfor %}
     </ul>
-
+<img alt="" src="{{url_for('static', filename='flasklogo.png')}}"> <br>
     <a href="{{ url_for('add_card')}}">ADD a new card</a>
 
+{% endblock %}
 
-</h2>
-</body>
-</html>
