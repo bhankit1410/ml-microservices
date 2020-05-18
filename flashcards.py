@@ -1,9 +1,10 @@
-from flask import Flask
 from datetime import datetime
+
+from flask import Flask
 
 app = Flask(__name__)
 
-count_view =0
+count_view = 0
 
 
 @app.route("/")
