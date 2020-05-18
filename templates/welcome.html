@@ -11,10 +11,15 @@
     <em>getting started with Flask</em>
     on <a href="https://github.com/bhankit1410/ml-microservices">Github</a>
 </p>
-
-
-<img src="/static/flasklogo.png">
-
-<p> {{message}}</p>
+<h2>
+    Flash cards
+    <ul>
+        {% for card in cards %}
+        <li>
+            <a href={{url_for('card_view', index=loop.index0)}}> {{ card.question }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</h2>
 </body>
 </html>
