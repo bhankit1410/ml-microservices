@@ -10,6 +10,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 ENV FLASK_ENV=development
-ENV FLASK_APP=flashcards.py
+ENV FLASK_APP=flashcards
 
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["flask", "run", "--host", "0.0.0.0"]
