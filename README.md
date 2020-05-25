@@ -8,4 +8,4 @@
 ###  run the container locally:
     $ docker run -p 30002:5000 -it flask:0.0.1
 
-### go to [this page](localhost:30002/)
+### go to [this page](http://localhost:30002)
